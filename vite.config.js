@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
 
-const pages = ['index', 'mini-vue3']
+const pages = ['index', 'mini-vue3', 'more-css']
 export default defineConfig({
   server: {
     port: 5181,
