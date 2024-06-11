@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
+import { globSync } from 'glob'
+import cdn from 'vite-plugin-cdn-import'
 
-const pages = ['index', 'mini-vue3']
+const pages = globSync('./*.html').map((v) => v.replace(/^(.*)\.html/, '$1'))
 export default defineConfig({
+  base: '/xiazhi-vanilla/',
   server: {
     port: 5181,
   },
@@ -14,4 +17,5 @@ export default defineConfig({
       }, {}),
     },
   },
+  plugins: [cdn({})],
 })
