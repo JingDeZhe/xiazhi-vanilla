@@ -1,8 +1,6 @@
 import { createGrid } from 'ag-grid-enterprise'
-import { computePosition } from 'https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.5/+esm'
 
 export const initGrid = (el) => {
-  const posterPop = initPosterPop(el)
   /**@type {import('ag-grid-community').GridOptions} */
   const gridOptions = {
     rowModelType: 'serverSide',
@@ -21,13 +19,6 @@ export const initGrid = (el) => {
         },
       },
       { field: 'year', headerName: '时间' },
-      {
-        field: 'poster',
-        headerName: '封面',
-        cellRenderer: (p) => {
-          return `<span class="poster-anchor"><i class="gg-image"></i></span>`
-        },
-      },
       { field: 'role_desc', headerName: '角色' },
     ],
     autoSizeStrategy: {
@@ -42,22 +33,6 @@ export const initGrid = (el) => {
 
     onFirstDataRendered: ({ api }) => {
       api.ensureIndexVisible(0, 'top')
-    },
-
-    onCellClicked: (p) => {
-      if (p.colDef.field === 'poster') {
-        posterPop.show(p.data.poster)
-        computePosition(p.event.target, posterPop.el, {
-          placement: 'bottom-start',
-        }).then(({ x, y }) => {
-          Object.assign(posterPop.el.style, {
-            left: `${x}px`,
-            top: `${y}px`,
-          })
-        })
-      } else {
-        posterPop.hide()
-      }
     },
   }
   const grid = createGrid(el, gridOptions)
@@ -79,27 +54,6 @@ const createDatasource = () => {
           console.error(err)
           params.fail()
         })
-    },
-  }
-}
-
-const initPosterPop = () => {
-  const el = document.createElement('div')
-  el.id = 'poster-pop'
-  el.innerHTML = 'sss'
-  const img = document.createElement('img')
-  el.appendChild(img)
-  document.body.appendChild(el)
-
-  return {
-    el,
-    show: (url) => {
-      el.style.display = 'block'
-      img.src = url
-    },
-    hide: () => {
-      el.style.display = 'none'
-      img.src = '#'
     },
   }
 }
