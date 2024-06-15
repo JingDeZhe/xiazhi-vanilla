@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      ag-grid-community:
+        specifier: ^31.3.2
+        version: 31.3.2
+      ag-grid-enterprise:
+        specifier: ^31.3.2
+        version: 31.3.2
     devDependencies:
       glob:
         specifier: ^10.4.1
@@ -303,6 +310,15 @@ packages:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  ag-charts-community@9.3.1:
+    resolution: {integrity: sha512-/+dTQXSHbOwmynsKA32b5MmkwYM53sYuRkrL8ZPjTdwnR0uLKhSOrwMryx8U/HqN7YkprmQKtoiLNKU9MQ3hvw==}
+
+  ag-grid-community@31.3.2:
+    resolution: {integrity: sha512-GxqFRD0OcjaVRE1gwLgoP0oERNPH8Lk8wKJ1txulsxysEQ5dZWHhiIoXXSiHjvOCVMkK/F5qzY6HNrn6VeDMTQ==}
+
+  ag-grid-enterprise@31.3.2:
+    resolution: {integrity: sha512-82p7ZQEiLOennoQ3PsPOsh0rI9p6eLKaV/yiD/BQb5rifVQE91N4bi2cFDwL283RWJrbOb7ZuGVdjr5OW5FEuA==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -906,6 +922,15 @@ snapshots:
   acorn-walk@8.3.2: {}
 
   acorn@8.11.3: {}
+
+  ag-charts-community@9.3.1: {}
+
+  ag-grid-community@31.3.2: {}
+
+  ag-grid-enterprise@31.3.2:
+    dependencies:
+      ag-charts-community: 9.3.1
+      ag-grid-community: 31.3.2
 
   ansi-regex@5.0.1: {}
 
