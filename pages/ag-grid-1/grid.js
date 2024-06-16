@@ -1,4 +1,5 @@
 import { createGrid } from 'ag-grid-enterprise'
+import 'https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js'
 
 export const initGrid = (el) => {
   /**@type {import('ag-grid-community').GridOptions} */
@@ -17,18 +18,27 @@ export const initGrid = (el) => {
         valueFormatter: (p) => {
           return p.data.is_tv === 0 ? '电影' : '电视剧'
         },
+        enableRowGroup: true,
       },
-      { field: 'year', headerName: '时间' },
+      { field: 'year', headerName: '时间', filter: 'agNumberColumnFilter', enableRowGroup: true },
       { field: 'role_desc', headerName: '角色' },
     ],
     autoSizeStrategy: {
       type: 'fitCellContents',
     },
+    sideBar: true,
     // colResizeDefault: 'shift',
 
     // events
-    onGridReady: () => {
+    onGridReady: ({ api }) => {
       console.log('grid ready')
+      api.setFilterModel({
+        year: {
+          filterType: 'number',
+          type: 'greaterThanOrEqual',
+          filter: 2020,
+        },
+      })
     },
 
     onFirstDataRendered: ({ api }) => {
