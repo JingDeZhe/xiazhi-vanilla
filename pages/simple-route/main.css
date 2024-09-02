@@ -1,0 +1,13 @@
+html,
+body {
+  background-color: #2d313c;
+  color: #fcfff5;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+.links a {
+  color: #fcfff5;
+}

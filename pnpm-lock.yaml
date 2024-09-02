@@ -14,6 +14,12 @@ importers:
       ag-grid-enterprise:
         specifier: ^32.1.0
         version: 32.1.0
+      htm:
+        specifier: ^3.1.1
+        version: 3.1.1
+      vhtml:
+        specifier: ^2.2.0
+        version: 2.2.0
     devDependencies:
       glob:
         specifier: ^11.0.0
@@ -454,6 +460,9 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
+  htm@3.1.1:
+    resolution: {integrity: sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==}
+
   human-signals@5.0.0:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
@@ -633,6 +642,9 @@ packages:
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
+
+  vhtml@2.2.0:
+    resolution: {integrity: sha512-TPXrXrxBOslRUVnlVkiAqhoXneiertIg86bdvzionrUYhEuiROvyPZNiiP6GIIJ2Q7oPNVyEtIx8gMAZZE9lCQ==}
 
   vite-node@2.0.5:
     resolution: {integrity: sha512-LdsW4pxj0Ot69FAoXZ1yTnA9bjGohr2yNBU7QKRxpz8ITSkhuDl6h3zS/tvgz4qrNjeRnvrWeXQ8ZF7Um4W00Q==}
@@ -1067,6 +1079,8 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
+  htm@3.1.1: {}
+
   human-signals@5.0.0: {}
 
   is-fullwidth-code-point@3.0.0: {}
@@ -1231,6 +1245,8 @@ snapshots:
   tinyspy@3.0.0: {}
 
   universalify@2.0.1: {}
+
+  vhtml@2.2.0: {}
 
   vite-node@2.0.5:
     dependencies:
